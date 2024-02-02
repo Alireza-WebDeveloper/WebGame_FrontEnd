@@ -1,6 +1,6 @@
 const parElement = document.querySelector('#gameLanding');
 
-const render = () => {
+const render = (data) => {
   parElement.innerHTML = `گیم لندیگ`;
 };
 
