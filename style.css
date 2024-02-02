@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
-@layer base{
-  a{
-    text-decoration:none;
+@layer base {
+  a {
+    text-decoration: none;
   }
+}
+.gameLanding-Info {
+  transform: translateY(100%);
+}
+
+.gameLanding-Item:hover .gameLanding-Info {
+  transform: translateY(0%);
+  transition: all 0.2s linear;
 }
