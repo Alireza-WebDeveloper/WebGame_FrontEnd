@@ -13,5 +13,10 @@
 
 .gameLanding-Item:hover .gameLanding-Info {
   transform: translateY(0%);
-  transition: all 0.2s linear;
+  transition: all 0.4s linear;
+}
+
+.gameLanding-Item {
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease;
 }

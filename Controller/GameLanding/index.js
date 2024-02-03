@@ -5,6 +5,7 @@ const InitialDataToRender = async () => {
   try {
     await GameLandingModel.setInitialData();
     GameLandingView.render(Store.gameLanding);
+    GameLandingView.AnimationGameLandingItem();
   } catch (err) {
     throw new Error(err);
   }
