@@ -27,7 +27,7 @@ const generateGameLandingList = (data) => {
         item.image
       }' alt='not found'/>
        
-      <div class='absolute gameLanding-Info inset-0 flex   flex-col space-y-2 justify-center items-center  bg-gray-800 bg-opacity-80 rounded'>
+      <div class='absolute gameLanding-Info inset-0 flex text-white  flex-col space-y-2 justify-center items-center  bg-gray-800 bg-opacity-80 rounded'>
       <h2 class='text-2xl font-semibold'>${item.platform}</h2>
       <p class='text-lg font-mono text-center'>${item.description}</p>
       </div>
