@@ -13,11 +13,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   </head>
   <body class="dark:bg-gray-900 bg-white dark:text-white capitalize text-black">
-    <div id="app" class="grid grid-cols-1 space-y-2">
+    <div id="app" class="flex flex-col space-y-2">
       <header class="relative" id="header"></header>
-      <main class="flex flex-col space-y-5"></main>
+      <main class="flex flex-col space-y-5">
+        <div id="gameLanding"></div>
+        <div id="game" class="flex flex-col space-y-3 container mx-auto">
+          <section id="platform"></section>
+          <section id="gameList" class="grid grid-cols-4 gap-4"></section>
+        </div>
+      </main>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

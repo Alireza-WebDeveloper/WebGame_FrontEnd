@@ -2,8 +2,9 @@ import './style.css';
 import * as HeaderMainView from './View/Header/main';
 import * as HeaderGameView from './View/Header/game';
 import * as GameLandingController from './Controller/GameLanding';
-import * as GameView from './View/Game';
+import * as GameController from './Controller/Game';
 import * as NotFoundView from './View/NotFound';
+import * as PlatformView from './View/Platform';
 const Route = (currentPath = window.location.pathname) => {
   switch (currentPath) {
     case '/':
@@ -12,7 +13,8 @@ const Route = (currentPath = window.location.pathname) => {
       break;
     case '/game':
       HeaderGameView.render();
-      GameView.render();
+      GameController.InitialDataToRender();
+      PlatformView.render();
       break;
     default:
       NotFoundView.render();

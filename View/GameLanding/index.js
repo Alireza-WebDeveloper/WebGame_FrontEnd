@@ -1,5 +1,4 @@
-const parElement = document.createElement('div');
-parElement.id = `#gameLanding`;
+const parElement = document.querySelector('#gameLanding');
 
 // Animation
 const handleStartAnimation = (elem, e) => {
