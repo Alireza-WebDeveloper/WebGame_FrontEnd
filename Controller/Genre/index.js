@@ -1,10 +1,10 @@
-import * as GameView from '../../View/Game';
-import * as GameModel from '../../Model/Game';
+import * as GenreView from '../../View/Genre';
+import * as GenreModel from '../../Model/Genre';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {
   try {
-    await GameModel.setInitialData();
-    GameView.render(Store.game);
+    await GenreModel.setInitialData();
+    GenreView.render(Store.genre);
   } catch (err) {
     throw new Error(err);
   }
