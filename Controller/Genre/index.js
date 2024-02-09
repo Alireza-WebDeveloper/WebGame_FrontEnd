@@ -5,6 +5,8 @@ const InitialDataToRender = async () => {
   try {
     await GenreModel.setInitialData();
     GenreView.render(Store.genre);
+    GenreView.handlerActiveCheckBox(Store.genre);
+    GenreView.toggleGenre();
   } catch (err) {
     throw new Error(err);
   }

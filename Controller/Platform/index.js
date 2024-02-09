@@ -6,6 +6,8 @@ const InitialDataToRender = async () => {
     await PlatformModel.setInitialData();
     console.log(Store);
     PlatformView.render(Store.platform);
+    PlatformView.handlerActiveCheckBox(Store.platform);
+    PlatformView.togglePlatform();
   } catch (err) {
     throw new Error(err);
   }
