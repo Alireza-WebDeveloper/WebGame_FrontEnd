@@ -28,7 +28,7 @@ const render = (data) => {
         <i class="fas fa-arrow-down fa-xl"></i>
         <span class='absolute bottom-0 w-[90%] h-[2px] bg-gray-100'></span>
       </section>
-      <div class='list_Platform'>
+      <div class='genre_List'>
         ${renderGenreCheckBox(data)}
       </div>
     </ul>
@@ -38,7 +38,7 @@ const render = (data) => {
 // Toggle the visibility of genre checkboxes
 const toggleGenre = () => {
   const toggleGenre = document.querySelector('.toggle_Genre');
-  const listPlatform = document.querySelector('.list_Platform');
+  const listPlatform = document.querySelector('.genre_List');
 
   toggleGenre.addEventListener('click', () => {
     listPlatform.classList.toggle('hidden');
