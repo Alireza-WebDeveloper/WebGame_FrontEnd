@@ -3,7 +3,7 @@ const parElement = document.querySelector('#header');
 
 const Menu = () => {
   return `
-  <div class="absolute top-0 left-0 w-full flex items-center justify-around dark:text-white bg-gray-100 text-black dark:bg-gray-700 bg-opacity-30 p-1">
+  <div class="flex items-center justify-around dark:text-white bg-gray-100 text-black dark:bg-gray-700 bg-opacity-30 p-1">
   ${Theme.render()}
   <section class="flex gap-10">
     <a href="/" class="text-lg">صفحه اصلی</a>
