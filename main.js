@@ -7,27 +7,33 @@ import * as GenreController from './Controller/Genre';
 import * as GameController from './Controller/Game';
 import * as NotFoundView from './View/NotFound';
 import * as ThemeView from './View/Theme';
+import * as GameDetailView from './View/GameDetail';
+
+const regexPattern = '\\/game\\/(\\d+)';
+const regex = new RegExp(regexPattern);
+
 const Route = async (currentPath = window.location.pathname) => {
-  switch (currentPath) {
-    case '/':
-      HeaderMainView.render();
-      ThemeView.changeTheme();
-      await GameLandingController.InitialDataToRender();
-      ThemeView.setInitialTheme();
-      break;
-    case '/game':
-      HeaderGameView.render();
-      ThemeView.changeTheme();
-      ThemeView.setInitialTheme();
-      await Promise.all([
-        GameController.InitialDataToRender(),
-        GenreController.InitialDataToRender(),
-        PlatformController.InitialDataToRender(),
-      ]);
-      break;
-    default:
-      NotFoundView.render();
-      break;
+  if (currentPath === '/') {
+    HeaderMainView.render();
+    ThemeView.changeTheme();
+    await GameLandingController.InitialDataToRender();
+    ThemeView.setInitialTheme();
+  } else if (currentPath === '/game') {
+    HeaderGameView.render();
+    ThemeView.changeTheme();
+    ThemeView.setInitialTheme();
+    await Promise.all([
+      GameController.InitialDataToRender(),
+      GenreController.InitialDataToRender(),
+      PlatformController.InitialDataToRender(),
+    ]);
+  } else if (location.pathname.match(regex) !== null) {
+    HeaderGameView.render();
+    ThemeView.changeTheme();
+    ThemeView.setInitialTheme();
+    GameDetailView.render();
+  } else {
+    NotFoundView.render();
   }
 };
 

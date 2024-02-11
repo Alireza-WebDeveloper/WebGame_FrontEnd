@@ -23,13 +23,16 @@
       <header class="relative" id="header"></header>
       <main class="flex flex-col space-y-5">
         <div id="gameLanding"></div>
-        <div class="grid grid-cols-2 gap-4 container mx-auto p-5">
-          <section class="flex flex-col space-y-4">
+        <div class="grid grid-cols-12 gap-5 container mx-auto p-5">
+          <section class="flex flex-col space-y-4 col-span-2">
             <div id="platform"></div>
             <div id="genre"></div>
           </section>
-          <section id="game"></section>
+          <section class="col-span-10">
+            <div id="game" class="grid grid-cols-3 gap-5"></div>
+          </section>
         </div>
+        <div id="gameDetail"></div>
       </main>
     </div>
     <script type="module" src="/main.js"></script>
