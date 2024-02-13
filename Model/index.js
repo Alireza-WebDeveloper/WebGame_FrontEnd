@@ -3,6 +3,7 @@ const Store = {
   game: [],
   platform: [],
   genre: [],
+  gameDetail:null
 };
 
 export default Store;

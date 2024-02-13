@@ -7,8 +7,7 @@ import * as GenreController from './Controller/Genre';
 import * as GameController from './Controller/Game';
 import * as NotFoundView from './View/NotFound';
 import * as ThemeView from './View/Theme';
-import * as GameDetailView from './View/GameDetail';
-
+import * as GameDetailController from './Controller/GameDetail';
 const regexPattern = '\\/game\\/(\\d+)';
 const regex = new RegExp(regexPattern);
 
@@ -31,7 +30,7 @@ const Route = async (currentPath = window.location.pathname) => {
     HeaderGameView.render();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
-    GameDetailView.render();
+    GameDetailController.InitialDataToRender();
   } else {
     NotFoundView.render();
   }
