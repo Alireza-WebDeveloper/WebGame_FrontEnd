@@ -19,9 +19,10 @@
     />
   </head>
   <body class="dark:bg-gray-900 bg-white dark:text-white capitalize text-black">
-    <div id="app" class="flex flex-col space-y-2">
+    <div id="app" class="flex flex-col">
       <header class="relative" id="header"></header>
-      <main class="flex flex-col space-y-5">
+      <main class="flex flex-col container mx-auto">
+        <div id="gameDetail"></div>
         <div id="gameLanding"></div>
         <div class="grid grid-cols-12 gap-5 container mx-auto p-5">
           <section class="flex flex-col space-y-4 col-span-2">
@@ -35,7 +36,6 @@
             ></div>
           </section>
         </div>
-        <div id="gameDetail"></div>
       </main>
     </div>
     <script type="module" src="/main.js"></script>
