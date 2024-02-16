@@ -9,6 +9,7 @@ const InitialDataToRender = async () => {
     const gameId = match ? match[1] : null;
     await GameDetailModel.setInitialData(gameId);
     GameDetailView.render(Store.gameDetail);
+    GameDetailView.optionVideo();
   } catch (err) {
     throw new Error(err);
   }

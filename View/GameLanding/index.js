@@ -48,7 +48,7 @@ const generateViewMoreLink = () => {
 };
 
 const generateTitle = () => {
-  return `<h1 class="text-3xl font-semibold capitalize text-center animate-pulse">
+  return `<h1 id='landingTitle' class="text-3xl font-semibold capitalize text-center animate-pulse">
     با ما بهترین را تجربه کنید
   </h1>`;
 };

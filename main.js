@@ -15,8 +15,9 @@ const Route = async (currentPath = window.location.pathname) => {
   if (currentPath === '/') {
     HeaderMainView.render();
     ThemeView.changeTheme();
-    await GameLandingController.InitialDataToRender();
     ThemeView.setInitialTheme();
+    HeaderMainView.handlerScrollDown();
+    await GameLandingController.InitialDataToRender();
   } else if (currentPath === '/game') {
     HeaderGameView.render();
     ThemeView.changeTheme();
@@ -30,7 +31,7 @@ const Route = async (currentPath = window.location.pathname) => {
     HeaderGameView.render();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
-    GameDetailController.InitialDataToRender();
+    await GameDetailController.InitialDataToRender();
   } else {
     NotFoundView.render();
   }

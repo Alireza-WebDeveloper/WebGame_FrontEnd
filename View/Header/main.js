@@ -30,16 +30,26 @@ const Menu = () => {
 };
 
 const scrollDown = () => {
-  return `<div class='absolute bottom-10 space-y-5 w-full text-center'>
-  <button class=' w-14 h-14 flex mx-auto animate-bounce justify-center items-center rounded-full bg-blue-500 text-white transition duration-300 hover:bg-blue-500 hover:text-gray-100'>
+  return `<div class='scrollDown absolute bottom-10 space-y-5 w-full text-center'>
+  <button class=' w-14 h-14 flex mx-auto animate-bounce justify-center items-center rounded-full bg-blue-600 text-white transition duration-300 hover:bg-blue-700 hover:text-gray-100'>
       <i class="fas fa-arrow-down fa-xl"></i>
   </button>
 </div>
 `;
 };
 
+const handlerScrollDown = () => {
+  let scrollDown = document.querySelector('.scrollDown');
+  let scrollDownTarget = document.querySelector('#landingTitle');
+  scrollDown.addEventListener('click', () => {
+    scrollDownTarget.scrollIntoView({
+      behavior: 'smooth',
+    });
+  });
+};
+
 const render = () => {
   parElement.innerHTML = `${Banner()}${Menu()}${scrollDown()}`;
 };
 
-export { render };
+export { render, handlerScrollDown };
