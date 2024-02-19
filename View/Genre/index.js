@@ -22,7 +22,7 @@ const renderGenreCheckBox = (data) => {
 // Render the genre checkboxes with a toggle button
 const render = (data) => {
   parElement.innerHTML = `
-    <ul class="w-60 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+    <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
       <section class='flex cursor-pointer items-center p-3 relative justify-between toggle_Genre'>
         <span class="text-xl text-gray-900 dark:text-white">سبک بازی</span>
         <i class="fas fa-arrow-down fa-xl"></i>

@@ -8,6 +8,8 @@ import * as GameController from './Controller/Game';
 import * as NotFoundView from './View/NotFound';
 import * as ThemeView from './View/Theme';
 import * as GameDetailController from './Controller/GameDetail';
+import * as IntroGameSlider from './View/IntroGameSlider';
+
 const regexPattern = '\\/game\\/(\\d+)';
 const regex = new RegExp(regexPattern);
 
@@ -22,6 +24,8 @@ const Route = async (currentPath = window.location.pathname) => {
     HeaderGameView.render();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
+    IntroGameSlider.render();
+    IntroGameSlider.setOptions();
     await Promise.all([
       GameController.InitialDataToRender(),
       GenreController.InitialDataToRender(),
