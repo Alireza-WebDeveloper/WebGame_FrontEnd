@@ -3,7 +3,8 @@ const Store = {
   game: [],
   platform: [],
   genre: [],
-  gameDetail:null
+  gameDetail: null,
+  gameIntoSlider: [],
 };
 
 export default Store;
