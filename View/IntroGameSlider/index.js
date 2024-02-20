@@ -41,47 +41,35 @@ const generateGenre = (data) => {
     .join('');
 };
 
-const render = () => {
-  parElement.innerHTML = `
-  <div class="swiper-container">
-  <div class="swiper-wrapper">
-    <div class="swiper-slide">
-    <a href='/game/' class='shadow-md  shadow-gray-900 flex rounded-md relative'>
-      <img class='h-60 rounded-md w-full lazy' data-src='https://wenbstorage.storage.iran.liara.space/webgame/image/game/banner/assistanceValhalla/1.webp' alt='not found'/>
-      <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-3 justify-end'>
-        <div>
-          ${generateGenre(['action'])}
-        </div>
+const generateGameSlider = (data) => {
+  return data
+    .map((game) => {
+      return `<div class="swiper-slide mr-5">
+    <a href='/game/${game._id}' class='flex rounded-md relative'>
+      <img class='h-60 rounded-md w-full lazy' src='${
+        game.bannerImage
+      }' alt='not found'/>
+      <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-1 justify-end'>
         <h1 class='font-semibold text-xl'>assisance creed valha</h1>
-        <p>یکی از بهترین بازی ها در سطج جهانی</p>
+        <p>${game.description.slice(0, 40)}...</p>
+        <section class='flex items-center gap-1'>
+        <span class="text-yellow-400 text-xl">☆</span>
+        <span>${game.score}/5</span>
+        </section>
       </div>
       <div class='absolute inset-0 z-10 top-0 bg-gray-800 opacity-20 rounded'></div>
       </a>
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
-    <div class="swiper-slide">
-     1
-    </div>
+    </div>`;
+    })
+    .join('');
+};
+
+const render = (data) => {
+  console.log(data);
+  parElement.innerHTML = `
+  <div class="swiper-container">
+  <div class="swiper-wrapper">
+  ${generateGameSlider(data)}
   </div>
  </div>
  `;
