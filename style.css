@@ -4,9 +4,19 @@
 
 @layer base {
   a {
-    text-decoration: none;
+    textdecoration: 'none';
+    color: 'inherit';
+  }
+  html {
+    font-family: BYekan;
   }
 }
+
+@font-face {
+  font-family: BYekan;
+  src: url('/font/BYekan/BYekan+.ttf');
+}
+
 .gameLanding-Info {
   transform: translateY(100%);
 }

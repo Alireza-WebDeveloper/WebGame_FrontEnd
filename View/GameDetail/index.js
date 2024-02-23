@@ -103,7 +103,7 @@ const generateDescription = (description) => {
   `;
 };
 
-const generateResultGame = () => {
+const generateResultGame = (review) => {
   return `
     <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-5 '>
       <section class='p-4 mt-5  shadow-lg dark:shadow-slate-500 flex flex-col space-y-5 rounded'>
@@ -114,12 +114,11 @@ const generateResultGame = () => {
           نقاط قوت بازی
         </h3>
         <ol class="max-w-md space-y-5 text-gray-500 list-decimal list-inside dark:text-gray-400">
-          <li>داستان‌سرایی جذاب و درگیر کننده</li>
-          <li>شخصیت پردازی خوب برای تمامی شخصیت‌ها به جز شاه آلفرد</li>
-          <li>درخت مهارت‌های Passive کاربردی و تاثیر گذار</li>
-          <li>داستان‌سرایی جذاب و درگیر کننده</li>
-          <li>شخصیت پردازی خوب برای تمامی شخصیت‌ها به جز شاه آلفرد</li>
-          <li>درخت مهارت‌های Passive کاربردی و تاثیر گذار</li>
+           ${review.positive
+             .map((reviewPositive) => {
+               return `<li>${reviewPositive}</li>`;
+             })
+             .join('')}
         </ol>
       </section>
       <section class='p-4 mt-5 shadow-lg dark:shadow-slate-500 flex flex-col space-y-5 rounded'>
@@ -130,12 +129,11 @@ const generateResultGame = () => {
           نقاط ضعف بازی
         </h3>
         <ol class="max-w-md space-y-5 text-gray-500 list-decimal list-inside dark:text-gray-400">
-          <li>شخصیت پردازی آلفرد می‌توانست بهتر باشد</li>
-          <li>باگ‌ها و گلیچ‌های متعدد و آزار دهنده</li>
-          <li>طراحی نامناسب بعضی از بافت‌ها و افت‌های حاصل از آتش</li>
-          <li>شخصیت پردازی آلفرد می‌توانست بهتر باشد</li>
-          <li>باگ‌ها و گلیچ‌های متعدد و آزار دهنده</li>
-          <li>طراحی نامناسب بعضی از بافت‌ها و افت‌های حاصل از آتش</li>
+        ${review.negative
+          .map((reviewNegative) => {
+            return `<li>${reviewNegative}</li>`;
+          })
+          .join('')}
         </ol>
       </section>
     </div>
@@ -167,7 +165,7 @@ const render = (game) => {
    ${generateDescription(game.description)}
    ${generateVideo(game.trailer)}
    ${generateStory(game.story)}
-   ${generateResultGame()}
+   ${generateResultGame(game.review)}
    </div>
   `;
 };
