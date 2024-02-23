@@ -20,6 +20,7 @@ const Menu = () => {
         <a href="/" class="text-xl">صفحه اصلی</a>
         <a href="/game" class="text-xl">بازی ها</a>
         <a href="/about" class="text-xl">درباره ما</a>
+        <a href="/favorite" class="text-xl">علاقه مندی من</a>
       </section>
       <section class='flex items-center gap-2'>
       <a href="/">
