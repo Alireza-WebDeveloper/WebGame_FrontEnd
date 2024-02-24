@@ -29,7 +29,7 @@ const togglePlatform = () => {
     togglePlatform.classList.toggle('active');
     togglePlatform.innerHTML = `
       <span class="text-xl text-gray-900 dark:text-white">پلتفرم</span>
-      <i class="fas ${
+      <i class="fa-solid ${
         togglePlatform.classList.contains('active')
           ? 'fa-arrow-up'
           : 'fa-arrow-down'
@@ -49,7 +49,7 @@ const render = (data) => {
     <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
       <section class='flex cursor-pointer items-center p-3 relative justify-between toggle_Platform'>
         <span class="text-xl text-gray-900 dark:text-white">پلتفرم</span>
-        <i class="fas fa-arrow-down fa-xl"></i>
+        <i class="fa fa-arrow-down fa-xl"></i>
         <span class='absolute bottom-0 w-[90%] h-[2px] bg-gray-100'></span>
       </section>
       <div class='list_Platform transition duration-75 ease-linear'>

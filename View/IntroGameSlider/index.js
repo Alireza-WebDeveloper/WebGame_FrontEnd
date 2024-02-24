@@ -65,7 +65,6 @@ const generateGameSlider = (data) => {
 };
 
 const render = (data) => {
-  console.log(data);
   parElement.innerHTML = `
   <div class="swiper-container">
   <div class="swiper-wrapper">
