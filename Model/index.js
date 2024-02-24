@@ -6,6 +6,7 @@ const Store = {
   gameDetail: null,
   gameIntoSlider: [],
   gameFavorite: [],
+  topGames: [],
 };
 
 export default Store;
