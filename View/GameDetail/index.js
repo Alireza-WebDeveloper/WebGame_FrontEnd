@@ -2,6 +2,7 @@ import { formatDate } from '../../Modules/FormatDate';
 
 const parElement = document.querySelector('#gameDetail');
 
+//!! Generate Rating On bannerImage
 const generateRating = (rating) => {
   const filledStars = '★'.repeat(rating);
   const emptyStars = '☆'.repeat(5 - rating);
@@ -15,6 +16,7 @@ const generateRating = (rating) => {
   `;
 };
 
+//!! Generate Platform On bannerImage
 const generatePlatform = (data) => {
   return data
     .map((item) => {
@@ -23,6 +25,8 @@ const generatePlatform = (data) => {
     })
     .join('');
 };
+
+// !! Generate Genre on Banner Game
 const generateGenre = (data) => {
   return data
     .map((item) => {
@@ -32,6 +36,7 @@ const generateGenre = (data) => {
     .join('');
 };
 
+// !! Generate Video
 const generateVideo = (trailer) => {
   return `
   <div class='w-[80%] mx-auto'>
@@ -69,12 +74,13 @@ const optionVideo = () => {
   });
 };
 
+// !! Generate Banner
 const generateBanner = (game) => {
   return `
   <div class="relative text-white">
     <img src="${
       game.bannerImage
-    }" class="object-fill rounded-xl h-[100vh] w-full"/>
+    }" class="object-fill rounded-xl min-h-[96] w-full"/>
     <section class="absolute flex-col top-0 left-0 w-full h-full rounded-xl flex justify-end items-start p-4 space-y-8">
       <h1 class="text-5xl font-bold capitalize">بررسی بازی ${game.name}</h1>
       <div class="flex flex-col">
@@ -95,25 +101,27 @@ const generateBanner = (game) => {
   `;
 };
 
+// !! Generate Description Game
 const generateDescription = (description) => {
   return `
   <section>
-    <p class="text-2xl">${description}</p>
+    <p class="text-xl text-center">${description}</p>
   </section>
   `;
 };
 
+// !! Generate Game Result
 const generateResultGame = (review) => {
   return `
-    <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-5 '>
-      <section class='p-4 mt-5  shadow-lg dark:shadow-slate-500 flex flex-col space-y-5 rounded'>
+    <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-10 '>
+      <section class='p-4 mt-5  shadow-lg dark:shadow-slate-500 dark:bg-gray-800 flex flex-col space-y-5 rounded'>
         <h3 class='flex items-center mb-2 text-2xl font-semibold text-gray-900 dark:text-white'>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
           </svg>
           نقاط قوت بازی
         </h3>
-        <ol class="max-w-md space-y-5 text-gray-500 list-decimal list-inside dark:text-gray-400">
+        <ol class="max-w-md space-y-5 text-gray-500 dark:text-white list-decimal list-inside  ">
            ${review.positive
              .map((reviewPositive) => {
                return `<li>${reviewPositive}</li>`;
@@ -121,14 +129,14 @@ const generateResultGame = (review) => {
              .join('')}
         </ol>
       </section>
-      <section class='p-4 mt-5 shadow-lg dark:shadow-slate-500 flex flex-col space-y-5 rounded'>
+      <section class='p-4 mt-5 shadow-lg dark:shadow-slate-500 dark:bg-gray-800 flex flex-col space-y-5 rounded'>
         <h3 class='flex items-center mb-2 text-2xl font-semibold text-gray-900 dark:text-white'>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
           </svg>
           نقاط ضعف بازی
         </h3>
-        <ol class="max-w-md space-y-5 text-gray-500 list-decimal list-inside dark:text-gray-400">
+        <ol class="max-w-md space-y-5 text-gray-500 dark:text-white list-decimal list-inside ">
         ${review.negative
           .map((reviewNegative) => {
             return `<li>${reviewNegative}</li>`;
@@ -140,6 +148,7 @@ const generateResultGame = (review) => {
   `;
 };
 
+// !! Render Game Story
 const generateStory = (stories) => {
   return `
   <section class="flex flex-col space-y-10 mt-4">
@@ -148,8 +157,8 @@ const generateStory = (stories) => {
       .map((story) => {
         return `
       <section class="flex flex-col space-y-2">
-      <img src="${story.image}" class="h-[75vh] rounded-xl w-[90%] mr-[5%] mt-1  object-fill" alt="پیدا نشد"/>
-        <p class="text-xl text-justify w-[90%] mr-[5%]">${story.description}</p>
+      <img src="${story.image}" class="h-[90vh] rounded-xl w-[80%] mr-[10%] mt-1  object-fill" alt="پیدا نشد"/>
+        <p class="text-xl text-center w-[80%] mr-[10%]">${story.description}</p>
       </section>
       `;
       })
@@ -158,9 +167,10 @@ const generateStory = (stories) => {
   `;
 };
 
+// !! Render Main Page
 const render = (game) => {
   parElement.innerHTML = `
-   <div class='flex flex-col space-y-5 mt-2 p-1'>
+   <div class='flex flex-col space-y-5 mt-2'>
    ${generateBanner(game)}
    ${generateDescription(game.description)}
    ${generateVideo(game.trailer)}
@@ -170,6 +180,11 @@ const render = (game) => {
   `;
 };
 
-export { render, optionVideo };
+// !! Page Title
+const TitlePage = (gameName) => {
+  document.title = `معرفی بازی | ${gameName}`;
+};
+
+export { render, optionVideo, TitlePage };
 
 //  <h2 class="text-3xl font-semibold">${story.title}</h2>

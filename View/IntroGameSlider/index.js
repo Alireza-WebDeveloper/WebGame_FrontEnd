@@ -2,6 +2,7 @@ const parElement = document.querySelector('#introGameSlider');
 import Swiper from '../../node_modules/swiper/swiper-bundle.mjs';
 import '../../node_modules/swiper/swiper-bundle.min.css';
 
+// !! Stop Option Responsive Swiper Slider
 const setOptions = () => {
   new Swiper('.swiper-container', {
     // تنظیمات Swiper به دلخواه شما
@@ -32,15 +33,7 @@ const setOptions = () => {
     },
   });
 };
-
-const generateGenre = (data) => {
-  return data
-    .map((genre) => {
-      return `<span class='w-8 h-8 font-semibold bg-purple-700 px-4 py-2 rounded-full'>${genre}</span>`;
-    })
-    .join('');
-};
-
+// !! Generate Game Sliders
 const generateGameSlider = (data) => {
   return data
     .map((game) => {
@@ -64,6 +57,7 @@ const generateGameSlider = (data) => {
     .join('');
 };
 
+// !! Generate Main
 const render = (data) => {
   parElement.innerHTML = `
   <div class="swiper-container">

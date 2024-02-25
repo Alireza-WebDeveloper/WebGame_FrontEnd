@@ -1,6 +1,6 @@
 const parElement = document.querySelector('#platform');
 
-// Render checkboxes based on the provided data
+// !! Render checkboxes based on the provided data
 const renderPlatformCheckBox = (data) => {
   const queryParams = new URLSearchParams(window.location.search);
   const currentPlatform = queryParams.get('platform');
@@ -19,7 +19,7 @@ const renderPlatformCheckBox = (data) => {
     .join('');
 };
 
-// Toggle the visibility of platform checkboxes
+// !! Toggle the visibility of platform checkboxes
 const togglePlatform = () => {
   const togglePlatform = document.querySelector('.toggle_Platform');
   const listPlatform = document.querySelector('.list_Platform');
@@ -43,7 +43,7 @@ const togglePlatform = () => {
   });
 };
 
-// Render the platform checkboxes with a toggle button
+// !! Render the platform checkboxes with a toggle button
 const render = (data) => {
   parElement.innerHTML = `
     <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -59,7 +59,7 @@ const render = (data) => {
   `;
 };
 
-// Activate/deactivate checkboxes based on user selection
+//  !! Activate/deactivate checkboxes based on user selection
 const handleCheckboxChange = (platform, checkbox) => {
   const queryParams = new URLSearchParams(window.location.search);
 
@@ -72,7 +72,7 @@ const handleCheckboxChange = (platform, checkbox) => {
   window.location.href = newUrl;
 };
 
-// Attach event listeners to checkboxes
+//  !! Attach event listeners to checkboxes
 const handlerActiveCheckBox = (data) => {
   data.forEach((platform) => {
     const checkbox = document.getElementById(`${platform}-checkbox`);

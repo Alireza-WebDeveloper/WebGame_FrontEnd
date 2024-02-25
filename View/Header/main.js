@@ -14,13 +14,13 @@ const Banner = () => {
 
 const Menu = () => {
   return `
-    <div class="absolute top-0 left-0 w-full flex items-center justify-around text-white bg-gray-500 bg-opacity-30 p-1">
+    <div class="absolute top-0 left-0 w-[95%] ml-[2.5%] mt-3 flex items-center justify-around text-black shadow bg-gray-200 dark:bg-gray-800 dark:text-white bg-opacity-70 p-5 rounded-lg">
        ${Theme.render()}  
     <section class="flex gap-10">
-        <a href="/" class="text-xl">صفحه اصلی</a>
-        <a href="/game" class="text-xl">بازی ها</a>
-        <a href="/about" class="text-xl">درباره ما</a>
-        <a href="/favorite" class="text-xl">علاقه مندی من</a>
+        <a href="/" class="text-2xl">صفحه اصلی</a>
+        <a href="/game" class="text-2xl">بازی ها</a>
+        <a href="/about" class="text-2xl">درباره ما</a>
+        <a href="/favorite" class="text-2xl">علاقه مندی من</a>
       </section>
       <section class='flex items-center gap-2'>
       <a href="/">

@@ -1,5 +1,6 @@
 const app = document.querySelector('#app');
 
+// !! Generate Main
 const render = () => {
   return (app.innerHTML = `
   <div class='min-h-[100vh] grid place-items-center'> 

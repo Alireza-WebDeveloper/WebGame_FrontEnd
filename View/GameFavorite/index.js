@@ -2,14 +2,7 @@ import LazyLoad from 'vanilla-lazyload';
 
 const parElement = document.querySelector('#favoriteGame');
 
-const generateGenre = (data) => {
-  return data
-    .map((genre) => {
-      return `<span class='w-8 h-8 font-semibold bg-purple-700 px-4 py-2 rounded-full'>${genre}</span>`;
-    })
-    .join('');
-};
-
+// !! handler Delete Favorite Game From List
 const handlerDeleteGameFavorite = (callback, gameStore) => {
   parElement.addEventListener('click', (e) => {
     const button = e.target.closest('.btn_deleteGameFavorite');
@@ -21,6 +14,16 @@ const handlerDeleteGameFavorite = (callback, gameStore) => {
   });
 };
 
+// !! Generate Genre on GameList
+const generateGenre = (data) => {
+  return data
+    .map((genre) => {
+      return `<span class='w-8 h-8 font-semibold bg-purple-700 px-4 py-2 rounded-full'>${genre}</span>`;
+    })
+    .join('');
+};
+
+// !! Generate Game List
 const generateGameList = (data) => {
   return data
     .map((game) => {
@@ -50,12 +53,14 @@ const generateGameList = (data) => {
     .join('');
 };
 
+// !! Main Render ParElement (Empty)
 const generateEmpty = () => {
   parElement.innerHTML = `<div class='relative h-[100vh] flex justify-center items-center p-4'>
   <p class='text-2xl transition animate-bounce'> لیست علاقه مندی وجود ندارد</p>
  </div>`;
 };
 
+// !! Main Render ParElement
 const render = (data) => {
   if (data.length >= 1) {
     parElement.innerHTML = `<div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 p-2 relative">
@@ -70,4 +75,9 @@ const render = (data) => {
   }
 };
 
-export { render, handlerDeleteGameFavorite };
+// !! Page Title
+const Title = () => {
+  document.title = 'علاقه مندی ها';
+};
+
+export { render, handlerDeleteGameFavorite, Title };

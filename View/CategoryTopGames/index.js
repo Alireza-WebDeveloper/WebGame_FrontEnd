@@ -1,5 +1,6 @@
 const parElement = document.querySelector('#category_TopGames');
 
+// !! Generate Category Top Games
 const render = () => {
   parElement.innerHTML = ` <div class="grid md:grid-cols-2 grid-cols-1 gap-5">
     <a href='/topGames/2024'>

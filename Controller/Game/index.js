@@ -6,12 +6,14 @@ import * as GameFavoriteModel from '../../Model/GameFavorite';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {
   try {
+    GameView.TitlePage();
     await GameModel.setInitialData();
     await IntroGameSliderModel.setInitialData();
     GameFavoriteModel.setInitialData();
     GameView.render(Store.game, Store.gameFavorite);
     GameView.handlerAddGameFavorite(addGameFavorite, Store.game);
     GameView.handlerDeleteGameFavorite(deleteGameFavorite, Store.game);
+
     IntroGameSlider.render(Store.gameIntoSlider);
     IntroGameSlider.setOptions();
   } catch (err) {

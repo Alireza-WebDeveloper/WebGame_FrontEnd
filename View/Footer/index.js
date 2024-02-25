@@ -1,5 +1,6 @@
 const parElement = document.querySelector('footer');
 
+// !! Generate Main
 const render = () => {
   parElement.innerHTML = `
   <section

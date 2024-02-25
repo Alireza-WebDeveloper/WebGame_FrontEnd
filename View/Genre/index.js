@@ -1,6 +1,6 @@
 const parElement = document.querySelector('#genre');
 
-// Render checkboxes based on the provided data
+// !! Render checkboxes based on the provided data
 const renderGenreCheckBox = (data) => {
   const queryParams = new URLSearchParams(window.location.search);
   const currentGenre = queryParams.get('genre');
@@ -19,7 +19,7 @@ const renderGenreCheckBox = (data) => {
     .join('');
 };
 
-// Render the genre checkboxes with a toggle button
+//  !! Render the genre checkboxes with a toggle button
 const render = (data) => {
   parElement.innerHTML = `
     <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
@@ -35,7 +35,7 @@ const render = (data) => {
   `;
 };
 
-// Toggle the visibility of genre checkboxes
+// !! Toggle the visibility of genre checkboxes
 const toggleGenre = () => {
   const toggleGenre = document.querySelector('.toggle_Genre');
   const listPlatform = document.querySelector('.genre_List');
@@ -59,7 +59,7 @@ const toggleGenre = () => {
   });
 };
 
-// Activate/deactivate checkboxes based on user selection
+// !!  Activate/deactivate checkboxes based on user selection
 const handleCheckboxChange = (genre, checkbox) => {
   const queryParams = new URLSearchParams(window.location.search);
 

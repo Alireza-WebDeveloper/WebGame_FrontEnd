@@ -95,4 +95,14 @@ const render = (data, gameFavoriteData) => {
   });
 };
 
-export { render, loading, handlerAddGameFavorite, handlerDeleteGameFavorite };
+const TitlePage = () => {
+  document.title = 'معرفی بازی ها';
+};
+
+export {
+  render,
+  loading,
+  handlerAddGameFavorite,
+  handlerDeleteGameFavorite,
+  TitlePage,
+};
