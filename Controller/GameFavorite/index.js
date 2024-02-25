@@ -17,6 +17,7 @@ const initialDataToRender = async () => {
 
 const deleteGameFavorite = (game) => {
   GameFavoriteModel.deleteGameFavorite(game);
+  GameFavoriteView.deleteGameFavoriteMessage();
   GameFavoriteView.render(Store.gameFavorite);
 };
 

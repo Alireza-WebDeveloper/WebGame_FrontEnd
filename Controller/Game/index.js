@@ -3,6 +3,7 @@ import * as GameModel from '../../Model/Game';
 import * as IntroGameSlider from '../../View/IntroGameSlider';
 import * as IntroGameSliderModel from '../../Model/GameIntroSlider';
 import * as GameFavoriteModel from '../../Model/GameFavorite';
+import * as GameFavoriteView from '../../View/GameFavorite';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {
   try {
@@ -27,6 +28,7 @@ const InitialDataToRender = async () => {
  */
 const deleteGameFavorite = (game) => {
   GameFavoriteModel.deleteGameFavorite(game);
+  GameFavoriteView.deleteGameFavoriteMessage();
   GameView.render(Store.game, Store.gameFavorite);
 };
 /**
@@ -35,6 +37,7 @@ const deleteGameFavorite = (game) => {
  */
 const addGameFavorite = (game) => {
   GameFavoriteModel.addGameFavorite(game);
+  GameFavoriteView.addGameFavoriteMessage();
   GameView.render(Store.game, Store.gameFavorite);
 };
 

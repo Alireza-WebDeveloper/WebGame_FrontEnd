@@ -1,5 +1,7 @@
+// !! Packages
 import LazyLoad from 'vanilla-lazyload';
-
+import Swal from 'sweetalert2';
+// !! Dom
 const parElement = document.querySelector('#favoriteGame');
 
 // !! handler Delete Favorite Game From List
@@ -80,4 +82,29 @@ const Title = () => {
   document.title = 'علاقه مندی ها';
 };
 
-export { render, handlerDeleteGameFavorite, Title };
+const addGameFavoriteMessage = () => {
+  Swal.fire({
+    position: 'top-center',
+    icon: 'success',
+    title: 'بازی به لیست علاقه مندی اضافه شد',
+    showConfirmButton: false,
+    timer: 1000,
+  });
+};
+
+const deleteGameFavoriteMessage = () => {
+  Swal.fire({
+    position: 'top-center',
+    icon: 'error',
+    title: 'بازی از لیست علاقه مندی حذف شد',
+    showConfirmButton: false,
+    timer: 1000,
+  });
+};
+export {
+  render,
+  handlerDeleteGameFavorite,
+  Title,
+  addGameFavoriteMessage,
+  deleteGameFavoriteMessage,
+};
