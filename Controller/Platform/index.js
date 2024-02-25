@@ -4,7 +4,6 @@ import Store from '../../Model/index';
 const InitialDataToRender = async () => {
   try {
     await PlatformModel.setInitialData();
-    console.log(Store);
     PlatformView.render(Store.platform);
     PlatformView.handlerActiveCheckBox(Store.platform);
     PlatformView.togglePlatform();

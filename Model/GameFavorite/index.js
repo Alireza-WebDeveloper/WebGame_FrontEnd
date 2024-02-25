@@ -30,7 +30,6 @@ const deleteGameFavorite = (game) => {
  */
 const addGameFavorite = (game) => {
   Store.gameFavorite = [...Store.gameFavorite, game];
-  console.log(Store);
   LocalStorage.set('gameFavorite', Store.gameFavorite);
 };
 

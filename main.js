@@ -69,5 +69,5 @@ const Route = async (currentPath = window.location.pathname) => {
     NotFoundView.render();
   }
 };
-console.log(location.pathname.match(regex2) !== null);
+
 Route();
