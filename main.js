@@ -30,6 +30,7 @@ const gameSidebar = document.querySelector('#gameSidebar');
 const Route = async (currentPath = window.location.pathname) => {
   if (currentPath === '/') {
     HeaderMainView.render();
+    HeaderMainView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
     HeaderMainView.handlerScrollDown();
@@ -37,6 +38,7 @@ const Route = async (currentPath = window.location.pathname) => {
     await GameLandingController.InitialDataToRender();
   } else if (currentPath === '/game') {
     HeaderGameView.render();
+    HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
     CategoryTopGamesView.render();
@@ -49,18 +51,21 @@ const Route = async (currentPath = window.location.pathname) => {
     gameSidebar.classList.add('h-[100vh]');
   } else if (location.pathname.match(regex) !== null) {
     HeaderGameView.render();
+    HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
     FooterView.render();
     await GameDetailController.InitialDataToRender();
   } else if (currentPath === '/favorite') {
     HeaderGameView.render();
+    HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
     FooterView.render();
     GameFavoriteController.initialDataToRender();
   } else if (location.pathname.match(regex2) !== null) {
     HeaderGameView.render();
+    HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
     ThemeView.setInitialTheme();
     FooterView.render();
