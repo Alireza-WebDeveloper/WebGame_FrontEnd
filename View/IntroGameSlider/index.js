@@ -43,7 +43,8 @@ const generateGameSlider = (data) => {
         game.bannerImage
       }' alt='not found'/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-1 justify-end'>
-        <h1 class='font-semibold text-xl'>assisance creed valha</h1>
+        <h1 class='font-semibold text-xl'>
+        ${game.name}</h1>
         <p>${game.description.slice(0, 40)}...</p>
         <section class='flex items-center gap-1'>
         <span class="text-yellow-400 text-xl">☆</span>
