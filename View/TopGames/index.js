@@ -29,21 +29,32 @@ const generateDescription = () => {
  */
 const generateTopGameList = (topGames) => {
   return topGames
-    .map((topGame, index) => {
+    .map((topGame, index, array) => {
       return `
-      <section class='flex flex-col space-y-5 dark:shadow-gray-800 p-5 rounded-xl shadow-lg shadow-gray-400 '>
-        <h3 class='text-start text-xl'>${index + 1} . ${topGame.name}</h3>
-        <img src='${
-          topGame.bannerImage
-        }' class="max-h-[600px] rounded-xl mt-1"/>
-        <p class='text-sm'>${topGame.description}</p>
-        <div class='mt-5 flex flex-col space-y-3'>
-          ${topGame.story
-            .map((storyItem) => {
-              return `<p>${storyItem.description}</p>`;
-            })
-            .join('')}
-        </div>
+      <section class='grid lg:grid-cols-2 sm:grid-cols-1 gap-3  rounded  shadow'/>
+      <div>
+      <img src='${topGame.bannerImage}' class="h-96 w-full mt-1 rounded"/>  
+      </div>
+      <div class='flex flex-col space-y-3 p-3'>
+      <h1 class='capitalize  text-3xl text-purple-800 dark:text-purple-500'>${
+        array.length - index
+      }.${topGame.name}</h1>
+      <div class='flex items-center gap-1 text-xl'>
+      <span class='font-semibold'>سازنده : </span>
+      <span>Jumpship</span>
+      </div>
+      <div class='flex items-center gap-1 text-xl'>
+      <span class='font-semibold'>پلتفرم : </span>
+      <div class='flex gap-2'>
+      <span>pc , </span>
+      <span>xbox , </span>
+      <span>playstation</span>
+      </div>
+      </div>
+      <p class='text-lg text-justify text-gray-600 dark:text-gray-300'>${
+        topGame.description
+      }</p>
+      </div>
       </section>`;
     })
     .join('');
