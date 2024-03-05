@@ -41,14 +41,22 @@ const generateTopGameList = (topGames) => {
       }.${topGame.name}</h1>
       <div class='flex items-center gap-1 text-xl'>
       <span class='font-semibold'>سازنده : </span>
-      <span>Jumpship</span>
+      ${topGame.builder
+        .map((build) => {
+          return `<span>${build}</span>`;
+        })
+        .join('')}
       </div>
       <div class='flex items-center gap-1 text-xl'>
       <span class='font-semibold'>پلتفرم : </span>
       <div class='flex gap-2'>
-      <span>pc , </span>
-      <span>xbox , </span>
-      <span>playstation</span>
+       ${topGame.platform.map((plat, index, array) => {
+         if (index === array.length - 1) {
+           return `<span>${plat}</span>`;
+         } else {
+           return `<span>${plat} , </span>`;
+         }
+       })}
       </div>
       </div>
       <p class='text-lg text-justify text-gray-600 dark:text-gray-300'>${
