@@ -31,14 +31,15 @@ const generateTopGameList = (topGames) => {
   return topGames
     .map((topGame, index, array) => {
       return `
-      <section class='grid lg:grid-cols-2 sm:grid-cols-1 gap-3  rounded  shadow'/>
+      <section class='grid  shadow-black lg:grid-cols-2 sm:grid-cols-1 gap-3  rounded  shadow-sm'/>
       <div>
-      <img src='${topGame.bannerImage}' class="h-96 w-full mt-1 rounded"/>  
+      <img src='${topGame.bannerImage}' class="h-96 w-full  rounded"/>  
       </div>
       <div class='flex flex-col space-y-3 p-3'>
-      <h1 class='capitalize  text-3xl text-purple-800 dark:text-purple-500'>${
+      <h1 class='capitalize  text-3xl text-purple-800 dark:text-purple-500'>
+      <span class='text-red-700 dark:text-red-500'>${
         array.length - index
-      }.${topGame.name}</h1>
+      }</span>.${topGame.name}</h1>
       <div class='flex items-center gap-1 text-xl'>
       <span class='font-semibold'>سازنده : </span>
       ${topGame.builder
@@ -50,13 +51,15 @@ const generateTopGameList = (topGames) => {
       <div class='flex items-center gap-1 text-xl'>
       <span class='font-semibold'>پلتفرم : </span>
       <div class='flex gap-2'>
-       ${topGame.platform.map((plat, index, array) => {
-         if (index === array.length - 1) {
-           return `<span>${plat}</span>`;
-         } else {
-           return `<span>${plat} , </span>`;
-         }
-       })}
+       ${topGame.platform
+         .map((plat, index, array) => {
+           if (index === array.length - 1) {
+             return `<a class='text-blue-800  text-lg font-semibold dark:text-blue-500' href='/game?platform=${plat}'>${plat}</a>`;
+           } else {
+             return `<a class='text-blue-800 text-lg font-semibold dark:text-blue-500' href='/game?platform=${plat}'>${plat} , </a>`;
+           }
+         })
+         .join('')}
       </div>
       </div>
       <p class='text-lg text-justify text-gray-600 dark:text-gray-300'>${
