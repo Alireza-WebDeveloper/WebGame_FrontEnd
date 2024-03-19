@@ -9,6 +9,7 @@ import * as GameController from './Controller/Game';
 import * as GameDetailController from './Controller/GameDetail';
 import * as GameFavoriteController from './Controller/GameFavorite';
 import * as TopGamesController from './Controller/TopGames';
+import * as IntroGameSliderController from './Controller/IntroGameSlider';
 // !! View
 import * as HeaderMainView from './View/Header/main';
 import * as HeaderGameView from './View/Header/game';
@@ -47,6 +48,7 @@ const Route = async (currentPath = window.location.pathname) => {
       GameController.InitialDataToRender(),
       GenreController.InitialDataToRender(),
       PlatformController.InitialDataToRender(),
+      IntroGameSliderController.InitialDataToRender(),
     ]);
     gameSidebar.classList.add('h-[100vh]');
   } else if (location.pathname.match(regex) !== null) {
