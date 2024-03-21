@@ -39,7 +39,7 @@ const generateGameSlider = (data) => {
     .map((game) => {
       return `<div class="swiper-slide mr-5">
     <a href='/game/${game._id}' class='flex rounded-md relative'>
-      <img class='h-60 rounded-md w-full lazy' src='${
+      <img loading="lazy" class='h-60 rounded-md w-full lazy' src='${
         game.bannerImage
       }' alt='not found'/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-1 justify-end'>

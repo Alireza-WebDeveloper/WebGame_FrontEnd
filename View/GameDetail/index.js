@@ -157,7 +157,7 @@ const generateStory = (stories) => {
       .map((story) => {
         return `
       <section class="flex flex-col space-y-2">
-      <img src="${story.image}" class="h-[90vh] rounded-xl w-[80%] mr-[10%] mt-1  object-fill" alt="پیدا نشد"/>
+      <img loading="lazy" src="${story.image}" class="h-[90vh] rounded-xl w-[80%] mr-[10%] mt-1  object-fill" alt="پیدا نشد"/>
         <p class="text-xl text-center w-[80%] mr-[10%]">${story.description}</p>
       </section>
       `;

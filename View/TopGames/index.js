@@ -33,7 +33,9 @@ const generateTopGameList = (topGames) => {
       return `
       <section class='grid  shadow-black lg:grid-cols-2 sm:grid-cols-1 gap-3  rounded  shadow-sm'/>
       <div>
-      <img src='${topGame.bannerImage}' class="h-96 w-full  rounded"/>  
+      <img loading="lazy" src='${
+        topGame.bannerImage
+      }' class="h-96 w-full  rounded"/>  
       </div>
       <div class='flex flex-col space-y-3 p-3'>
       <h1 class='capitalize  text-3xl text-purple-800 dark:text-purple-500'>

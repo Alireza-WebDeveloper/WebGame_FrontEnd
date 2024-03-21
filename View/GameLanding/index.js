@@ -31,7 +31,7 @@ const generateGameLandingList = (data) => {
       <a href="/game?platform=${platform}" class='flex gameLanding-Item overflow-hidden flex-col rounded relative items-center ${
         index % 2 === 0 ? 'row-span-2' : 'row-span-1'
       }'>
-        <img class='w-full h-full object-cover rounded-md' src='${image}' alt='not found'/>
+        <img loading="lazy" class='w-full h-full object-cover rounded-md' src='${image}' alt='not found'/>
        
         <div class='absolute gameLanding-Info inset-0 flex text-white flex-col space-y-2 justify-center items-center bg-gray-800 bg-opacity-80 rounded'>
           <h2 class='text-2xl font-semibold'>${platform}</h2>

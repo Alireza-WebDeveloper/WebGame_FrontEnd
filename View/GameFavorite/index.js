@@ -31,7 +31,7 @@ const generateGameList = (data) => {
     .map((game) => {
       return ` 
       <div class='shadow-md  shadow-gray-900 flex rounded-md relative'>
-      <img class='h-60 rounded-md w-full lazy' data-src='${
+      <img loading="lazy" class='h-60 rounded-md w-full lazy' data-src='${
         game.bannerImage
       }' alt='not found'/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-4 justify-end'>

@@ -5,6 +5,7 @@ const Banner = () => {
   return `
     <section class="relative">
       <img
+      loading="lazy"
         src="https://wenbstorage.storage.iran.liara.space/webgame/image/banner/1.jpg"
         alt="not found"
         class="h-[100vh] w-full object-fill"
@@ -66,7 +67,7 @@ const Menu = () => {
       </section>
       <section class='flex items-center gap-2'>
       <a href="/">
-        <img src="/image/logo/1.png" class="w-[10vh]" alt="not found"/>
+        <img loading="lazy" src="/image/logo/1.png" class="w-[10vh]" alt="not found"/>
       </a>
       </section>
     </div>`;
