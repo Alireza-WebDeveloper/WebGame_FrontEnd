@@ -34,6 +34,7 @@ import * as GameDetailSeo from './Seo/GameDetail';
 import * as GameFavorite from './Seo/GameFavorite';
 import * as TopGamesSeo from './Seo/TopGames';
 import * as NotFoundSeo from './Seo/NotFound';
+
 // !! Route
 const Route = async (currentPath = window.location.pathname) => {
   if (currentPath === '/') {
