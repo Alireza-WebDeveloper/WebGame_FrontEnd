@@ -46,15 +46,15 @@ const createButtonFavorite = (game, gameFavoriteData) => {
   );
   if (findGame) {
     return `<section class='absolute z-20 top-0 left-0 pl-2 pt-2'>
-    <button data-code="${game._id}" class='btn_deleteGameFavorite'>
+    <button data-code="${game._id}" class='btn_deleteGameFavorite' aria-label="Delete favorite game">
     <i class="fas fa-heart text-2xl text-red-500"></i>
-    </button>
+</button>
     </section>`;
   } else {
     return `<section class='absolute z-20 top-0 left-0 pl-2 pt-2'>
-    <button data-code="${game._id}" class='btn_addGameFavorite'>
+    <button data-code="${game._id}" class='btn_addGameFavorite' aria-label="Add to favorites">
     <i class="far fa-heart text-2xl text-red-500"></i>
-    </button>
+</button>
     </section>`;
   }
 };
