@@ -8,12 +8,12 @@ const renderGenreCheckBox = (data) => {
     .map((genre) => {
       const isChecked = genre === currentGenre ? 'checked' : '';
       return `
-        <li class="w-full rounded-t-lg dark:border-gray-600">
-          <div class="flex items-center ps-3">
-            <input id="${genre}-checkbox" type="checkbox" value="${genre}" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" ${isChecked}>
-            <label for="${genre}-checkbox" class="w-full ca py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">${genre}</label>
-          </div>
-        </li>
+      <li class="w-full rounded-t-lg dark:border-gray-600">
+      <div class="flex items-center ps-3">
+          <input id="${genre}-checkbox" type="checkbox" value="${genre}" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" ${isChecked}>
+          <label for="${genre}-checkbox" class="w-full ca py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">${genre}</label>
+      </div>
+  </li>  
       `;
     })
     .join('');
