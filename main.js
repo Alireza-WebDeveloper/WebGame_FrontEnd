@@ -27,9 +27,17 @@ const regex2 = new RegExp(regexPattern2);
 // !! Dom
 const gameSidebar = document.querySelector('#gameSidebar');
 
+// !! Seo
+import * as GameLandingSeo from './Seo/GameLanding';
+import * as GameSeo from './Seo/Game';
+import * as GameDetailSeo from './Seo/GameDetail';
+import * as GameFavorite from './Seo/GameFavorite';
+import * as TopGamesSeo from './Seo/TopGames';
+import * as NotFoundSeo from './Seo/NotFound';
 // !! Route
 const Route = async (currentPath = window.location.pathname) => {
   if (currentPath === '/') {
+    GameLandingSeo.renderMetaTags();
     HeaderMainView.render();
     HeaderMainView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
@@ -38,6 +46,7 @@ const Route = async (currentPath = window.location.pathname) => {
     FooterView.render();
     await GameLandingController.InitialDataToRender();
   } else if (currentPath === '/game') {
+    GameSeo.renderMetaTags();
     HeaderGameView.render();
     HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
@@ -52,6 +61,7 @@ const Route = async (currentPath = window.location.pathname) => {
     ]);
     gameSidebar.classList.add('h-[100vh]');
   } else if (location.pathname.match(regex) !== null) {
+    GameDetailSeo.renderGameDetailsMetaTags();
     HeaderGameView.render();
     HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
@@ -59,6 +69,7 @@ const Route = async (currentPath = window.location.pathname) => {
     FooterView.render();
     await GameDetailController.InitialDataToRender();
   } else if (currentPath === '/favorite') {
+    GameFavorite.renderFavoritesMetaTags();
     HeaderGameView.render();
     HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
@@ -66,6 +77,7 @@ const Route = async (currentPath = window.location.pathname) => {
     FooterView.render();
     GameFavoriteController.initialDataToRender();
   } else if (location.pathname.match(regex2) !== null) {
+    TopGamesSeo.renderTopGamesMetaTags();
     HeaderGameView.render();
     HeaderGameView.handlerDropdownTopGamesMenu();
     ThemeView.changeTheme();
@@ -73,6 +85,7 @@ const Route = async (currentPath = window.location.pathname) => {
     FooterView.render();
     TopGamesController.InitialDataToRender();
   } else {
+    NotFoundSeo.renderNotFoundMetaTags();
     NotFoundView.render();
   }
 };
