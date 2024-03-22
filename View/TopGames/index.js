@@ -7,9 +7,10 @@ const parElement = document.querySelector('#topGames');
  */
 const generateTitle = (year) => {
   return `
-    <h1 class='font-semibold text-3xl  animate-bounce'>
-      برترین <span class='text-purple-800 dark:text-purple-500'>بازی های ویدیویی</span> ${year}
-    </h1>`;
+  <h2 class='font-semibold text-3xl  animate-bounce'>
+  برترین <span class='text-purple-800 dark:text-purple-500'>بازی های ویدیویی</span> ${year}
+</h2>
+`;
 };
 
 /**
