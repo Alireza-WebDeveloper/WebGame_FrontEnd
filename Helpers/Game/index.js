@@ -7,10 +7,13 @@ const getAllGameList = async () => {
     // 2 ) Read Query Of Url
     const platform = currentUrl.searchParams.get('platform');
     const genre = currentUrl.searchParams.get('genre');
+    const gameName = currentUrl.searchParams.get('name');
 
     const queryParams = new URLSearchParams();
+
     if (platform) queryParams.append('platform', platform);
     if (genre) queryParams.append('genre', genre);
+    if (gameName) queryParams.append('name', gameName);
     // 3 ) Condition
     const url =
       '/game' + (queryParams.toString() ? '?' + queryParams.toString() : '');

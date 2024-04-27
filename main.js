@@ -17,6 +17,7 @@ import * as NotFoundView from './View/NotFound';
 import * as ThemeView from './View/Theme';
 import * as CategoryTopGamesView from './View/CategoryTopGames';
 import * as FooterView from './View/Footer';
+import * as GameSearchView from './View/GameSearch';
 // !! RegExp
 const regexPattern = '\\/game\\/(\\d+)';
 const regex = new RegExp(regexPattern);
@@ -60,6 +61,9 @@ const Route = async (currentPath = window.location.pathname) => {
       PlatformController.InitialDataToRender(),
       IntroGameSliderController.InitialDataToRender(),
     ]);
+    GameSearchView.render();
+    GameSearchView.initialValue();
+    GameSearchView.handlerGameSearch();
     gameSidebar.classList.add('h-[100vh]');
   } else if (location.pathname.match(regex) !== null) {
     GameDetailSeo.renderGameDetailsMetaTags();
