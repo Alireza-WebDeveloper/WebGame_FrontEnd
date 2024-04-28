@@ -1,4 +1,5 @@
 // !! Styles
+import 'sass';
 import './style.scss';
 
 // !! Controllers
