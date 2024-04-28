@@ -66,7 +66,7 @@ const generateGameList = (data, gameFavoriteData) => {
       <div class='shadow-md  shadow-gray-900 flex rounded-md relative'>
       <img class='h-72 rounded-md w-full lazy' data-src='${
         game.bannerImage
-      }' alt='not found'/>
+      }' alt='not found' alt="پیدا نشد"/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-4 justify-end'>
         <div class='flex items-center gap-2 flex-wrap'>
           ${generateGenre(game.genre)}

@@ -78,7 +78,9 @@ const optionVideo = () => {
 const generateBanner = (game) => {
   return `
   <div class="relative text-white">
-    <img src="${game.bannerImage}" class="object-fill  min-h-[96] w-full"/>
+    <img src="${
+      game.bannerImage
+    }" class="object-fill  min-h-[96] w-full" alt="پیدا نشد"/>
     <section class="absolute flex-col top-0 left-0 w-full h-full rounded-xl flex justify-end items-start p-4 space-y-8">
       <h1 class="text-5xl font-bold capitalize">بررسی بازی ${game.name}</h1>
       <div class="flex flex-col">

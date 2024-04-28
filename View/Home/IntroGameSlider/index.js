@@ -41,7 +41,7 @@ const generateGameSlider = (data) => {
     <a href='/game/${game._id}' class='flex rounded-md relative'>
       <img loading="lazy" class='h-60 rounded-md w-full lazy' src='${
         game.bannerImage
-      }' alt='not found'/>
+      }' alt='not found' alt="پیدا نشد"/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-1 justify-end'>
         <h1 class='font-semibold text-xl'>
         ${game.name}</h1>

@@ -67,7 +67,7 @@ const Menu = () => {
       </section>
       <section class='flex items-center gap-2'>
       <a href="/">
-        <img loading="lazy" src="/image/logo/1.png" class="w-[10vh]" alt="not found"/>
+        <img loading="lazy" src="/image/logo/1.png" class="w-[10vh]" alt="پیدا نشد"/>
       </a>
       </section>
     </div>`;
