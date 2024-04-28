@@ -78,9 +78,7 @@ const optionVideo = () => {
 const generateBanner = (game) => {
   return `
   <div class="relative text-white">
-    <img src="${
-      game.bannerImage
-    }" class="object-fill rounded-xl min-h-[96] w-full"/>
+    <img src="${game.bannerImage}" class="object-fill  min-h-[96] w-full"/>
     <section class="absolute flex-col top-0 left-0 w-full h-full rounded-xl flex justify-end items-start p-4 space-y-8">
       <h1 class="text-5xl font-bold capitalize">بررسی بازی ${game.name}</h1>
       <div class="flex flex-col">
@@ -113,9 +111,9 @@ const generateDescription = (description) => {
 // !! Generate Game Result
 const generateResultGame = (review) => {
   return `
-    <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-10 '>
+    <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-10 container mx-auto '>
       <section class='p-4 mt-5  shadow-lg dark:shadow-slate-500 dark:bg-gray-800 flex flex-col space-y-5 rounded'>
-        <h3 class='flex items-center mb-2 text-2xl font-semibold text-gray-900 dark:text-white'>
+        <h3 class='flex items-center mb-2 text-3xl font-semibold text-gray-900 dark:text-white'>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
           </svg>
@@ -124,13 +122,13 @@ const generateResultGame = (review) => {
         <ol class="max-w-md space-y-5 text-gray-500 dark:text-white list-decimal list-inside  ">
            ${review.positive
              .map((reviewPositive) => {
-               return `<li>${reviewPositive}</li>`;
+               return `<li class='text-lg'>${reviewPositive}</li>`;
              })
              .join('')}
         </ol>
       </section>
       <section class='p-4 mt-5 shadow-lg dark:shadow-slate-500 dark:bg-gray-800 flex flex-col space-y-5 rounded'>
-        <h3 class='flex items-center mb-2 text-2xl font-semibold text-gray-900 dark:text-white'>
+        <h3 class='flex items-center mb-2 text-3xl font-semibold text-gray-900 dark:text-white'>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
           </svg>
@@ -139,7 +137,7 @@ const generateResultGame = (review) => {
         <ol class="max-w-md space-y-5 text-gray-500 dark:text-white list-decimal list-inside ">
         ${review.negative
           .map((reviewNegative) => {
-            return `<li>${reviewNegative}</li>`;
+            return `<li class='text-lg'>${reviewNegative}</li>`;
           })
           .join('')}
         </ol>
@@ -170,7 +168,7 @@ const generateStory = (stories) => {
 // !! Render Main Page
 const render = (game) => {
   parElement.innerHTML = `
-   <div class='flex flex-col space-y-5 mt-2'>
+   <div class='flex flex-col space-y-5 '>
    ${generateBanner(game)}
    ${generateDescription(game.description)}
    ${generateVideo(game.trailer)}

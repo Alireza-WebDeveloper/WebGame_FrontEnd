@@ -4,7 +4,7 @@ const parElement = document.querySelector('#header');
 const Menu = () => {
   return `
   <div class="flex items-center justify-around   dark:bg-gray-800  p-5
-  w-[95%] mr-[2.5%] mt-3  dark:text-white  text-black  bg-gray-100 shadow   rounded-lg
+  sm:max-xl:container sm:max-xl:mx-auto   dark:text-white  text-black  bg-gray-100 shadow 
   ">
   ${Theme.render()}
   <section class="flex gap-10">
