@@ -1,5 +1,5 @@
 import * as TopGamesModel from '../../Model/TopGames';
-import * as TopGamesView from '../../View/TopGames';
+import * as TopGamesView from '../../View/GameTop';
 import Store from '../../Model/index';
 
 const InitialDataToRender = async () => {

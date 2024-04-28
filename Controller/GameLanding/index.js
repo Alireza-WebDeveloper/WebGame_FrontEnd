@@ -1,4 +1,4 @@
-import * as GameLandingView from '../../View/GameLanding';
+import * as GameLandingView from '../../View/Landing';
 import * as GameLandingModel from '../../Model/GameLanding';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {

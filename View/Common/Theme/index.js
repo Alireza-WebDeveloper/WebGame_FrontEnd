@@ -1,5 +1,5 @@
 // !! import Packaes
-import * as LocalStorage from '../../Modules/LocalStorage';
+import * as LocalStorage from '../../../Modules/LocalStorage';
 // !! Dom
 const htmlDom = document.querySelector('html');
 const storedTheme = LocalStorage.get('theme', 'light');

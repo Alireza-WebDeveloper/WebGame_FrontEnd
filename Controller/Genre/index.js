@@ -1,4 +1,4 @@
-import * as GenreView from '../../View/Genre';
+import * as GenreView from '../../View/Home/Genre';
 import * as GenreModel from '../../Model/Genre';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {

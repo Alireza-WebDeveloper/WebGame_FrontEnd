@@ -1,4 +1,4 @@
-import * as GameFavoriteView from '../../View/GameFavorite/index';
+import * as GameFavoriteView from '../../View/Favorite/index';
 import * as GameFavoriteModel from '../../Model/GameFavorite/index';
 import Store from '../../Model/index';
 const initialDataToRender = async () => {

@@ -11,13 +11,13 @@ import * as GameFavoriteController from './Controller/GameFavorite';
 import * as TopGamesController from './Controller/TopGames';
 import * as IntroGameSliderController from './Controller/IntroGameSlider';
 // !! View
-import * as HeaderMainView from './View/Header/main';
-import * as HeaderGameView from './View/Header/game';
+import * as HeaderMainView from './View/Common/Header/main';
+import * as HeaderGameView from './View/Common/Header/game';
 import * as NotFoundView from './View/NotFound';
-import * as ThemeView from './View/Theme';
-import * as CategoryTopGamesView from './View/CategoryTopGames';
-import * as FooterView from './View/Footer';
-import * as GameSearchView from './View/GameSearch';
+import * as ThemeView from './View/Common/Theme';
+import * as CategoryTopGamesView from './View/Home/CategoryTopGames';
+import * as FooterView from './View/Common/Footer';
+import * as GameSearchView from './View/Home/GameSearch';
 // !! RegExp
 const regexPattern = '\\/game\\/(\\d+)';
 const regex = new RegExp(regexPattern);

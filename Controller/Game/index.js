@@ -1,9 +1,8 @@
-import * as GameView from '../../View/Game';
+import * as GameView from '../../View/Home/Game';
 import * as GameModel from '../../Model/Game';
-import * as IntroGameSlider from '../../View/IntroGameSlider';
-import * as IntroGameSliderModel from '../../Model/GameIntroSlider';
+
 import * as GameFavoriteModel from '../../Model/GameFavorite';
-import * as GameFavoriteView from '../../View/GameFavorite';
+import * as GameFavoriteView from '../../View/Favorite';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {
   try {

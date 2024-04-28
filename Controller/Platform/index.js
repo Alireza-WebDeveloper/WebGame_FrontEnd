@@ -1,4 +1,4 @@
-import * as PlatformView from '../../View/Platform';
+import * as PlatformView from '../../View/Home/Platform';
 import * as PlatformModel from '../../Model/Platform';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {

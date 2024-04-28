@@ -1,6 +1,6 @@
 const parElement = document.querySelector('#introGameSlider');
-import Swiper from '../../node_modules/swiper/swiper-bundle.mjs';
-import '../../node_modules/swiper/swiper-bundle.min.css';
+import Swiper from 'swiper';
+import '../../../node_modules/swiper/swiper-bundle.min.css';
 
 // !! Stop Option Responsive Swiper Slider
 const setOptions = () => {

@@ -1,5 +1,5 @@
 import * as IntroGameSliderModel from '../../Model/GameIntroSlider';
-import * as IntroGameSliderView from '../../View/IntroGameSlider';
+import * as IntroGameSliderView from '../../View/Home/IntroGameSlider';
 import Store from '../../Model/index';
 const InitialDataToRender = async () => {
   try {
