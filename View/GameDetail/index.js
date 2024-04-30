@@ -105,7 +105,7 @@ const generateBanner = (game) => {
 const generateDescription = (description) => {
   return `
   <section>
-    <p class="text-xl text-center">${description}</p>
+    <p class="text-xl  justify-start lg:w-[80%] m-auto w-full p-4 ">${description}</p>
   </section>
   `;
 };
@@ -156,7 +156,7 @@ const generateStory = (stories) => {
     ${stories
       .map((story) => {
         return `
-      <section class="flex flex-col space-y-2">
+      <section class="flex flex-col space-y-5">
       <img loading="lazy" src="${story.image}" class="h-[90vh] rounded-xl w-[80%] mr-[10%] mt-1  object-fill" alt="پیدا نشد"/>
         <p class="text-xl text-center w-[80%] mr-[10%]">${story.description}</p>
       </section>
