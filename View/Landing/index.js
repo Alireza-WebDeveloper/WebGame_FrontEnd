@@ -32,8 +32,7 @@ const generateGameLandingList = (data) => {
         index % 2 === 0 ? 'row-span-2' : 'row-span-1'
       }'>
         <img loading="lazy" class='w-full h-full object-cover rounded-md' src='${image}' alt="پیدا نشد"/>
-       
-        <div class='absolute gameLanding-Info inset-0 flex text-white flex-col space-y-2 justify-center items-center bg-gray-800 bg-opacity-80 rounded'>
+        <div class='absolute  max-lg:hidden gameLanding-Info inset-0 flex text-white flex-col space-y-2 justify-center items-center bg-gray-800 bg-opacity-80 rounded'>
           <h2 class='text-2xl font-semibold'>${platform}</h2>
           <p class='text-lg font-mono text-center'>${description}</p>
         </div>
@@ -65,7 +64,7 @@ const render = (data) => {
   document.querySelector('main').appendChild(parElement);
   parElement.innerHTML = `
     ${generateTitle()}
-    <div class="grid grid-cols-4 grid-rows-5 h-[150vh] gap-y-2 gap-x-3 p-2 mt-10">
+    <div class="grid lg:grid-cols-4 lg:grid-rows-5 md:grid-cols-3  max-sm:grid-cols-2 lg:h-[150vh] md:h-[160vh]   gap-y-2 gap-x-3 p-2 mt-10">
       ${generateGameLandingList(data)}
     </div>
     ${generateViewMoreLink()}`;

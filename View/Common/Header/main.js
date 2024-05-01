@@ -5,14 +5,15 @@ const parElement = document.querySelector('#header');
 
 const Banner = () => {
   return `
-    <section class="relative">
-      <img
-      loading="lazy"
-        src="https://wenbstorage.storage.iran.liara.space/webgame/image/banner/1.jpg"
-        alt="not found"
-        class="h-[100vh] w-full object-fill"
-      />
-    </section>`;
+  <section class="relative h-96 lg:h-[120vh] md:h-[80vh] sm:h-[60vh] max-sm:h-[40vh]">
+  <img
+    loading="lazy"
+    src="https://wenbstorage.storage.iran.liara.space/webgame/image/banner/1.jpg"
+    alt="not found"
+    class="w-full h-full object-cover"
+  />
+</section>
+`;
 };
 
 const generateTopGameMenu = () => {
@@ -80,8 +81,8 @@ const Menu = () => {
 };
 
 const scrollDown = () => {
-  return `<div class='scrollDown absolute bottom-10 space-y-5 w-full text-center'>
-  <button aria-label="Scroll down" class="w-14 h-14 flex mx-auto animate-bounce justify-center items-center rounded-full bg-blue-600 text-white transition duration-300 hover:bg-blue-700 hover:text-gray-100">
+  return `<div class='scrollDown absolute bottom-10 space-y-5 w-full text-center lg:flex hidden'>
+  <button aria-label="Scroll down" class="w-20 h-20 flex mx-auto animate-bounce justify-center items-center rounded-full bg-blue-600 text-white transition duration-300 hover:bg-blue-700 hover:text-gray-100">
   <i class="fas fa-arrow-down fa-xl"></i>
 </button>
 </div>
