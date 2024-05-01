@@ -2,7 +2,7 @@ import * as Routes from './data';
 const toggleSideBar = () => {
   return ` 
       <span id='toggleSideBar' class="cursor-pointer flex lg:hidden">
-        <i class="fa-solid fa-bars fa-lg"></i>
+        <i class="fa-solid fa-bars fa-xl"></i>
       </span>
      `;
 };
