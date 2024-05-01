@@ -1,21 +1,21 @@
 import * as Theme from '../Theme';
+import * as SideBar from './SideBar';
+import * as Routes from './data';
 const parElement = document.querySelector('#header');
 
 const Menu = () => {
   return `
-  <div class="flex items-center justify-around   dark:bg-gray-800  p-5
+  <div class="flex items-center lg:justify-around  justify-between  dark:bg-gray-800  p-5
   sm:max-xl:container sm:max-xl:mx-auto   dark:text-white  text-black  bg-gray-100 shadow 
   ">
+  ${SideBar.toggleSideBar()}
   ${Theme.render()}
-  <section class="flex gap-10">
-    <a href="/" class="text-2xl">صفحه اصلی</a>
-    <a href="/game" class="text-2xl">بازی ها</a>
-    <a href="/about" class="text-2xl">درباره ما</a>
-    <a href="/favorite" class="text-2xl">علاقه مندی من</a>
+  <section class="lg:flex gap-10 hidden">
+    ${Routes.render()}
     ${generateTopGameMenu()}
   </section>
-  <section class='flex items-center gap-10'>
-  <a href="/">
+  <section class='lg:flex hidden items-center gap-10'>
+  <a href="/" >
     <img loading="lazy" src="/image/logo/1.png" class="w-[10vh]" alt="پیدا نشد"/>
   </a>
   </section>
@@ -65,6 +65,7 @@ const handlerDropdownTopGamesMenu = () => {
 
 const render = () => {
   parElement.innerHTML = `${Menu()}`;
+  SideBar.render();
 };
 
 export { render, handlerDropdownTopGamesMenu };

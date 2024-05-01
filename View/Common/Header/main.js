@@ -1,4 +1,6 @@
 import * as Theme from '../Theme';
+import * as SideBar from './SideBar';
+import * as Routes from './data';
 const parElement = document.querySelector('#header');
 
 const Banner = () => {
@@ -18,11 +20,8 @@ const generateTopGameMenu = () => {
   <button id="dropdownButton" class="text-2xl">
     معرفی برترین بازی‌ها
   </button>
-  <div id="dropdownMenu" class="absolute top-full left-0 mt-2 w-full bg-white border rounded-lg shadow-lg hidden p-3 space-y-3 dark:bg-gray-800">
-    <a href="/topGames/2024" class="block px-4 py-2 rounded text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-900">بازی ویدیویی 2024</a>
-    <a href="/topGames/2023" class="block px-4 py-2 rounded text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-900">بازی ویدیویی 2023</a>
-    <a href="/topGames/2022" class="block px-4 py-2 rounded text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-900">بازی ویدیویی 2022</a>
-    <a href="/topGames/2021" class="block px-4 py-2 rounded text-gray-800 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-900">بازی ویدیویی 2021</a>
+  <div id="dropdownMenu" class="absolute z-50 top-full left-0 mt-2 w-full bg-white border rounded-lg shadow-lg hidden p-3 space-y-3 dark:bg-gray-800">
+  ${Routes.render()}
   </div>
 </div>
 `;
@@ -54,22 +53,29 @@ const handlerDropdownTopGamesMenu = () => {
   });
 };
 
+const Logo = () => {
+  return `<section class='flex items-center gap-2'>
+  <a href="/">
+    <img loading="lazy" src="/image/logo/1.png" class="lg:w-[7vh] w-[10vh]" alt="پیدا نشد"/>
+  </a>
+  </section>`;
+};
+
 const Menu = () => {
   return `
-    <div class="absolute top-0 left-0 w-[95%] ml-[2.5%] mt-3 flex items-center justify-around text-black shadow bg-gray-200 dark:bg-gray-800 dark:text-white bg-opacity-70 p-5 rounded-lg">
-       ${Theme.render()}  
-    <section class="flex gap-10">
+    <div class="absolute  flex  top-0 left-0 w-[95%] ml-[2.5%] mt-3  items-center lg:justify-around justify-between text-black shadow bg-gray-200 dark:bg-gray-800 dark:text-white bg-opacity-70 p-5 rounded-lg">
+     ${SideBar.toggleSideBar()}
+     ${Theme.render()}
+    <section class="lg:flex gap-10 hidden">
         <a href="/" class="text-2xl">صفحه اصلی</a>
         <a href="/game" class="text-2xl">بازی ها</a>
         <a href="/about" class="text-2xl">درباره ما</a>
         <a href="/favorite" class="text-2xl">علاقه مندی من</a>
         ${generateTopGameMenu()}
       </section>
-      <section class='flex items-center gap-2'>
-      <a href="/">
-        <img loading="lazy" src="/image/logo/1.png" class="w-[10vh]" alt="پیدا نشد"/>
-      </a>
-      </section>
+     <div class='lg:flex hidden'>
+     ${Logo()}
+     </div>
     </div>`;
 };
 
@@ -94,6 +100,7 @@ const handlerScrollDown = () => {
 
 const render = () => {
   parElement.innerHTML = `${Banner()}${Menu()}${scrollDown()}`;
+  SideBar.render();
 };
 
 export { render, handlerScrollDown, handlerDropdownTopGamesMenu };

@@ -11,7 +11,7 @@ const render = () => {
 
   return `
     <section class='cursor-pointer' id='toggle_Theme'>
-      <i class="fa ${themeIcon} text-4xl ${iconClass}"></i>
+      <i class="fa ${themeIcon} lg:text-4xl text-xl ${iconClass}"></i>
     </section>
   `;
 };
@@ -25,6 +25,7 @@ const updateThemeIcon = (value) => {
 // !! Handler Change Theme
 const changeTheme = () => {
   const toggleTheme = document.querySelector('#toggle_Theme');
+
   toggleTheme.addEventListener('click', () => {
     if (htmlDom.classList.contains('light')) {
       htmlDom.classList.remove('light');
