@@ -17,8 +17,12 @@ const setOptions = () => {
       pauseOnMouseEnter: true,
     },
     breakpoints: {
-      1024: {
+      2000: {
         slidesPerView: 6,
+        spaceBetween: 3,
+      },
+      1024: {
+        slidesPerView: 5,
         spaceBetween: 3,
       },
       768: {
@@ -27,7 +31,7 @@ const setOptions = () => {
       },
       // تنظیمات برای وضعیت‌های مختلف صفحه
       0: {
-        slidesPerView: 1,
+        slidesPerView: 2,
         spaceBetween: 1,
       },
     },
@@ -43,9 +47,12 @@ const generateGameSlider = (data) => {
         game.bannerImage
       }' alt='not found' alt="پیدا نشد"/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-1 justify-end'>
-        <h1 class='font-semibold text-xl'>
+        <h1 class='font-semibold md:text-xl max-md:text-sm'>
         ${game.name}</h1>
-        <p>${game.description.slice(0, 40)}...</p>
+        <p class='lg:text-lg max-md:text-sm'>${game.description.slice(
+          0,
+          40
+        )}...</p>
         <section class='flex items-center gap-1'>
         <span class="text-yellow-400 text-xl">☆</span>
         <span>${game.score}/5</span>
