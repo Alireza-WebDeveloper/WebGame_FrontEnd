@@ -8,7 +8,7 @@ const renderPlatformCheckBox = (data) => {
     .map((platform) => {
       const isChecked = platform === currentPlatform ? 'checked' : '';
       return `
-        <li class="w-full rounded-t-lg dark:border-gray-600">
+        <li class="w-full rounded-t-lg dark:border-gray-600 ">
           <div class="flex items-center ps-3">
             <input id="${platform}-checkbox" type="checkbox" value="${platform}" class="w-5 h-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" ${isChecked}>
             <label for="${platform}-checkbox" class="w-full ca py-3 ms-2 text-lg font-medium text-gray-900 dark:text-gray-300">${platform}</label>
@@ -52,7 +52,7 @@ const render = (data) => {
         <i class="fa fa-arrow-down fa-xl"></i>
         <span class='absolute bottom-0 w-[90%] h-[2px] bg-gray-100'></span>
       </section>
-      <div class='list_Platform transition duration-75 ease-linear'>
+      <div class='list_Platform transition duration-75 ease-linear max-lg:overflow-y-scroll  max-lg:h-[30vh]'>
         ${renderPlatformCheckBox(data)}
       </div>
     </ul>
