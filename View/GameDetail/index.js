@@ -20,7 +20,7 @@ const generateRating = (rating) => {
 const generatePlatform = (data) => {
   return data
     .map((item) => {
-      return `<button class="capitalize  px-4 py-2 text-lg font-semibold rounded 
+      return `<button class="capitalize   lg:px-4 lg:py-2 px-2 py-1 lg:text-lg text-sm  font-semibold rounded 
       bg-cyan-500 text-white hover:bg-cyan-700">${item}</button>`;
     })
     .join('');
@@ -30,7 +30,7 @@ const generatePlatform = (data) => {
 const generateGenre = (data) => {
   return data
     .map((item) => {
-      return `<button class="capitalize  px-4 py-2 text-lg font-semibold rounded 
+      return `<button class="capitalize  lg:px-4 lg:py-2 px-2 py-1 lg:text-lg text-sm font-semibold rounded 
       bg-blue-500 text-white hover:bg-blue-700">${item}</button>`;
     })
     .join('');
@@ -82,8 +82,10 @@ const generateBanner = (game) => {
       game.bannerImage
     }" class="object-fill  min-h-[96] w-full" alt="پیدا نشد"/>
     <section class="absolute flex-col top-0 left-0 w-full h-full rounded-xl flex justify-end items-start p-4 space-y-8">
-      <h1 class="text-5xl font-bold capitalize">بررسی بازی ${game.name}</h1>
-      <div class="flex flex-col">
+      <h1 class="lg:text-5xl md:text-3xl max-sm:sm:text-sm font-bold capitalize">بررسی بازی ${
+        game.name
+      }</h1>
+      <div class="lg:flex   sm:hidden max-sm:hidden flex-col">
         <div class='flex gap-3 items-center'>
         ${generateGenre(game.genre)}
         ${generatePlatform(game.platform)}
@@ -105,7 +107,7 @@ const generateBanner = (game) => {
 const generateDescription = (description) => {
   return `
   <section>
-    <p class="text-xl  justify-start lg:w-[80%] m-auto w-full p-4 ">${description}</p>
+    <p class="lg:text-xl  sm:max-lg:text-sm  justify-start lg:w-[80%] m-auto w-full p-4 ">${description}</p>
   </section>
   `;
 };
@@ -113,7 +115,7 @@ const generateDescription = (description) => {
 // !! Generate Game Result
 const generateResultGame = (review) => {
   return `
-    <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-10 container mx-auto '>
+    <div class='grid md:grid-cols-2 sm:grid-cols-1 gap-10 container mx-auto p-4'>
       <section class='p-4 mt-5  shadow-lg dark:shadow-slate-500 dark:bg-gray-800 flex flex-col space-y-5 rounded'>
         <h3 class='flex items-center mb-2 text-3xl font-semibold text-gray-900 dark:text-white'>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -156,9 +158,9 @@ const generateStory = (stories) => {
     ${stories
       .map((story) => {
         return `
-      <section class="flex flex-col space-y-5">
-      <img loading="lazy" src="${story.image}" class="h-[90vh] rounded-xl w-[80%] mr-[10%] mt-1  object-fill" alt="پیدا نشد"/>
-        <p class="text-xl text-center w-[80%] mr-[10%]">${story.description}</p>
+      <section class="flex flex-col space-y-5 border w-[80%]  mx-auto rounded-xl p-2">
+      <img loading="lazy" src="${story.image}" class="lg:h-[90vh] md:h-[65vh] sm:max-md:h-[45vh] h-[30vh] rounded-xl   mt-1  object-fill" alt="پیدا نشد"/>
+        <p class="lg:text-xl sm:max-lg:text-sm text-center">${story.description}</p>
       </section>
       `;
       })
