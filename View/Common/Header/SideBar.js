@@ -19,8 +19,8 @@ const render = () => {
       isOpen = false;
     } else {
       const newDiv = document.createElement('div');
-      newDiv.innerHTML = `<div class='fixed lg:hidden flex overflow-y flex-col top-0 right-0 p-4 z-50 text-black shadow bg-gray-200 dark:bg-gray-800 dark:text-white   md:w-1/3  max-sm:1/2 h-full sidebar-open' style="transform: translateX(100%)">
-        <span id='close_SideBar' class='cursor-pointer'>
+      newDiv.innerHTML = `<div class='fixed lg:hidden flex overflow-y-auto flex-col top-0 right-0 p-4 z-50 text-black shadow bg-gray-200 dark:bg-gray-800 dark:text-white   md:w-1/3  max-sm:1/2 h-full sidebar-open' style="transform: translateX(100%)">
+        <span id='close_SideBar' class='cursor-pointer text-red-600 dark:text-red-500'>
         <i class="fa fa-window-close" aria-hidden="true"></i>
         </span>
         <section class="flex flex-col gap-3 ">

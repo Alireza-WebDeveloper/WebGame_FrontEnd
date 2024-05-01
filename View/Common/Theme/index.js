@@ -19,7 +19,7 @@ const render = () => {
 // !! Generate Update Theme Icon
 const updateThemeIcon = (value) => {
   const icon = value === 'light' ? 'fa-sun' : 'fa-moon';
-  toggle_Theme.innerHTML = `<i class="fa ${icon} text-4xl"></i>`;
+  toggle_Theme.innerHTML = `<i class="fa ${icon} lg:text-4xl text-xl"></i>`;
 };
 
 // !! Handler Change Theme
