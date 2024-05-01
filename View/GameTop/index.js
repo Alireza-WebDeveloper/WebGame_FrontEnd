@@ -43,7 +43,7 @@ const generateTopGameList = (topGames) => {
       <span class='text-red-700 dark:text-red-500'>${
         array.length - index
       }</span>.${topGame.name}</h1>
-      <div class='flex items-center gap-1 text-xl'>
+      <div class='flex items-center flex-wrap gap-1 text-xl'>
       <span class='font-semibold'>سازنده : </span>
       ${topGame.builder
         .map((build) => {
@@ -53,7 +53,7 @@ const generateTopGameList = (topGames) => {
       </div>
       <div class='flex items-center gap-1 text-xl'>
       <span class='font-semibold'>پلتفرم : </span>
-      <div class='flex gap-2'>
+      <div class='flex gap-2 flex-wrap'>
        ${topGame.platform
          .map((plat, index, array) => {
            if (index === array.length - 1) {
