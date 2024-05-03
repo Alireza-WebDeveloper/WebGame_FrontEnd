@@ -3,14 +3,7 @@ import 'sass';
 import './style.scss';
 
 // !! Controllers
-import * as PlatformController from './Controller/Platform';
-import * as GameLandingController from './Controller/GameLanding';
-import * as GenreController from './Controller/Genre';
-import * as GameController from './Controller/Game';
-import * as GameDetailController from './Controller/GameDetail';
-import * as GameFavoriteController from './Controller/GameFavorite';
-import * as TopGamesController from './Controller/TopGames';
-import * as IntroGameSliderController from './Controller/IntroGameSlider';
+import Controller from './Controller';
 
 // !! View
 import * as HeaderMainView from './View/Common/Header/main';
@@ -49,7 +42,7 @@ const Route = async (currentPath = window.location.pathname) => {
     HeaderMainView.handlerDropdownTopGamesMenu();
     RenderUi();
     HeaderMainView.handlerScrollDown();
-    await GameLandingController.InitialDataToRender();
+    await Controller.GameLanding.InitialDataToRender();
   } else if (currentPath === '/game') {
     GameSeo.renderMetaTags();
     HeaderGameView.render();
@@ -57,10 +50,10 @@ const Route = async (currentPath = window.location.pathname) => {
     RenderUi();
     CategoryTopGamesView.render();
     await Promise.all([
-      GameController.InitialDataToRender(),
-      GenreController.InitialDataToRender(),
-      PlatformController.InitialDataToRender(),
-      IntroGameSliderController.InitialDataToRender(),
+      Controller.Game.InitialDataToRender(),
+      Controller.Genre.InitialDataToRender(),
+      Controller.Platform.InitialDataToRender(),
+      Controller.IntroGameSlider.InitialDataToRender(),
     ]);
     GameSearchView.render();
     GameSearchView.initialValue();
@@ -71,19 +64,19 @@ const Route = async (currentPath = window.location.pathname) => {
     HeaderGameView.render();
     HeaderGameView.handlerDropdownTopGamesMenu();
     RenderUi();
-    await GameDetailController.InitialDataToRender();
+    await Controller.GameDetail.InitialDataToRender();
   } else if (currentPath === '/favorite') {
     GameFavorite.renderFavoritesMetaTags();
     HeaderGameView.render();
     HeaderGameView.handlerDropdownTopGamesMenu();
     RenderUi();
-    await GameFavoriteController.initialDataToRender();
+    await Controller.GameFavorite.initialDataToRender();
   } else if (location.pathname.match(GameTopRegex) !== null) {
     TopGamesSeo.renderTopGamesMetaTags();
     HeaderGameView.render();
     HeaderGameView.handlerDropdownTopGamesMenu();
     RenderUi();
-    await TopGamesController.InitialDataToRender();
+    await Controller.TopGames.InitialDataToRender();
   } else {
     NotFoundSeo.renderNotFoundMetaTags();
     NotFoundView.render();
