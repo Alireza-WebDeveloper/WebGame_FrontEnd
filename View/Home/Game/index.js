@@ -68,14 +68,15 @@ const generateGameList = (data, gameFavoriteData) => {
         game.bannerImage
       }' alt='not found' alt="پیدا نشد"/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-4 justify-end'>
-        <div class='flex items-center gap-2 flex-wrap'>
+        <div class='flex items-center gap-4 flex-wrap'>
           ${generateGenre(game.genre)}
         </div>
         <h1 class='font-semibold text-xl'>${game.name}</h1>
-        <p>${game.description.slice(0, 100)}...</p>
+        <p class='md:flex hidden'>${game.description.slice(0, 100)}...</p>
+        <p class='md:hidden flex'>${game.description.slice(0, 60)}...</p>
         <a href='/game/${
           game._id
-        }' class='px-2 py-1 border-2 hover:bg-blue-600 border-blue-500 cursor-pointer w-fit rounded-md'>جزییات بیشتر</a>
+        }' class='px-2 py-1 border-2 hover:bg-blue-600 bg-blue-500 cursor-pointer w-fit rounded-md'>جزییات بیشتر</a>
       </div>
        ${createButtonFavorite(game, gameFavoriteData)}
       <div class='absolute inset-0 z-10 top-0 bg-gray-800 opacity-20 rounded'></div>

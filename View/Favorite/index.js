@@ -20,7 +20,7 @@ const handlerDeleteGameFavorite = (callback, gameStore) => {
 const generateGenre = (data) => {
   return data
     .map((genre) => {
-      return `<span class='w-8 h-8 font-semibold bg-purple-700 px-4 py-2 rounded-full'>${genre}</span>`;
+      return `<span class='font-semibold bg-purple-700 px-3    text-sm py-1.5 rounded-full'>${genre}</span>`;
     })
     .join('');
 };
@@ -35,21 +35,21 @@ const generateGameList = (data) => {
         game.bannerImage
       }' alt="پیدا نشد"/>
       <div class='absolute z-20 p-4 top-0 left-0 text-white w-full h-full rounded flex flex-col space-y-4 justify-end'>
-        <div>
+        <div class='flex gap-2 flex-wrap'>
           ${generateGenre(game.genre)}
         </div>
         <h1 class='font-semibold text-xl'>${game.name}</h1>
-        <p>${game.description.slice(0, 100)}...</p>
+        <p class='md:flex hidden'>${game.description.slice(0, 100)}...</p>
         <a href='/game/${
           game._id
-        }' class='px-2 py-1 border-2 border-blue-500 cursor-pointer w-fit rounded-md'>جزییات بیشتر</a>
+        }' class='px-2 py-1 border-2 bg-blue-500 cursor-pointer w-fit rounded-md'>جزییات بیشتر</a>
       </div>
       <section class='absolute z-20 top-0 left-0 pl-2 pt-2'>
       <button data-code="${game._id}" class='btn_deleteGameFavorite'>
       <i class="fas fa-heart text-2xl text-red-500"></i>
       </button>
       </section>
-      <div class='absolute inset-0 z-10 top-0 bg-gray-800 opacity-20 rounded'></div>
+      <div class='absolute inset-0 z-10 top-0 bg-gray-800 opacity-20  rounded'></div>
       </div>`;
     })
     .join('');
